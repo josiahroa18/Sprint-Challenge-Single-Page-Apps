@@ -19,7 +19,7 @@ export default function CharacterList() {
 
   useEffect(() => {
     if(search){
-      setSearchData(data.filter(character => character.name.toLowerCase().includes(search.toLocaleLowerCase())));
+      setSearchData(data.filter(character => character.name.toLowerCase().includes(search.toLowerCase())));
     }else{
       setSearchData(data);
     }

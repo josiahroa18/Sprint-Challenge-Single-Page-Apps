@@ -11,7 +11,7 @@ function Details(){
     useEffect(() => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/location/${id}`)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setData(res.data);
             res.data.residents.forEach(resident => {
                 axios.get(resident)
