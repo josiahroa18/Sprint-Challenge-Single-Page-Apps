@@ -35,7 +35,7 @@ export default function CharacterList() {
         <input placeholder='name' type='text' onChange={handleChange}></input>
       </form>
       {/* Display Character Data */}
-      <div>
+      <div className='card-container'>
         {searchData.map(character => {
           return <CharacterCard key={character.id} character={character}/>
         })}
