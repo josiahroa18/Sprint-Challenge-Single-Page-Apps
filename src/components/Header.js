@@ -8,6 +8,7 @@ export default function Header() {
       <div className='links'>
         <Link to='/'>Home</Link>
         <Link to='/characters'>Characters</Link>
+        <Link to='/locations'>Locations</Link>
       </div>
     </header>
   );

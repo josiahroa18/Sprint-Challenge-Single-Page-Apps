@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 import axios from 'axios';
 
 export default function CharacterList() {
@@ -18,7 +19,7 @@ export default function CharacterList() {
 
   useEffect(() => {
     if(search){
-      setSearchData(data.filter(character => character.name.includes(search)));
+      setSearchData(data.filter(character => character.name.toLowerCase().includes(search.toLocaleLowerCase())));
     }else{
       setSearchData(data);
     }
@@ -30,10 +31,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <form>
-        <label>Search</label>
-        <input placeholder='name' type='text' onChange={handleChange}></input>
-      </form>
+      <SearchForm handleChange={handleChange}/>
       {/* Display Character Data */}
       <div className='card-container'>
         {searchData.map(character => {
